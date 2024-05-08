@@ -21,12 +21,19 @@ body {
 }
 
 .container,
-.row .content {
+.row-header,
+.row-content {
   max-width: $container-max-width;
 }
 
 .row {
   justify-content: center;
+  padding-top: map-get($spacers, 6);
+  padding-bottom: map-get($spacers, 6);
+
+  h2 {
+    @include font-display-m;
+  }
 
   &.bg-1 {
     background-color: $bg-1;
@@ -35,21 +42,18 @@ body {
   &.bg-2 {
     background-color: $bg-2;
   }
+}
 
-  .content {
+.row-header {
+  text-align: center;
+}
+
+@include media-breakpoint-up(lg) {
+  .row-content {
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    text-align: center;
-    padding: map-get($spacers, 5) 0;
-  }
-}
-
-@include media-breakpoint-up(md) {
-  .row {
-    .content {
-      padding: map-get($spacers, 6) 0;
-    }
   }
 }
 
