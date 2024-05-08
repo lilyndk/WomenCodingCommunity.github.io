@@ -10,13 +10,12 @@
 @import "code-of-conduct";
 @import "mentors";
 @import "media-breakpoint";
+@import "mixins";
 @import "resources";
 
 
 h1, h2, h3 {
     text-align: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
 }
 
 p, ul, ol {
