@@ -186,7 +186,7 @@
 }
 
 
-.mentorship-about {
+.mentorship-overview {
     .card-body {
         align-items: baseline;
 
@@ -197,6 +197,19 @@
 
         p {
             margin-bottom: 0.25rem;
+            text-align: left;
+        }
+    }
+
+    .card-deck {
+        flex-flow: column wrap;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .mentorship-overview {
+        .card-deck {
+            flex-flow: row wrap;
         }
     }
 }
@@ -241,3 +254,4 @@
       text-overflow: ellipsis;
     }
 }
+

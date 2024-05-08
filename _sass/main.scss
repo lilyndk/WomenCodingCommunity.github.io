@@ -34,7 +34,7 @@ p, ul, ol {
 //
 
 .page-header {
-  background: $bg-1;
+  background: $primary-90;
   color: $primary;
   text-align: center;
   padding: map-get($spacers, 5) map-get($spacers, 2);
@@ -45,25 +45,19 @@ p, ul, ol {
   }
 }
 
-.container {
-  .section {
+.page-content {
+  section {
     margin-top: map-get($spacers, 5) !important;
 
     &:last-child {
       margin-bottom: map-get($spacers, 5);
     }
   }
-}
 
-.content-constrained {
-  h2 {
-    @include font-headline-l;
-    margin-bottom: 1rem;
-  }
-
-  h3 {
-    font-size: $font-headline-m;
-    margin: 1.7rem 0 1rem 0;
+  p {
+    &.lead {
+      text-align: center;
+    }
   }
 }
 
@@ -80,12 +74,18 @@ p, ul, ol {
 }
 
 nav.container,
+.mentors .search,
+.page-content,
 .row {
   max-width: $container-max-width;
 }
 
+.page-content,
 .row {
   margin: 0 auto;
+}
+
+.row-featured-content {
   padding-top: map-get($spacers, 6);
   padding-bottom: map-get($spacers, 6);
   justify-content: center;
@@ -106,6 +106,18 @@ nav.container,
 
 
 // Basic page 'content constrained' container width size adjustments to ensure 50-75 char per line for optimal readability  
+
+.content-constrained {
+  h2 {
+    @include font-headline-l;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: $font-headline-m;
+    margin: 1.7rem 0 1rem 0;
+  }
+}
 
 $custom-container-columns-l: 8;
 $custom-container-columns-m: 7;
