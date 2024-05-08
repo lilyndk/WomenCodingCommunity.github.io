@@ -26,7 +26,6 @@
 @mixin font-display-m {
     font-size: $font-display-s;
     line-height: 1.1;
-    margin-bottom: 1.4rem;
 
     @include media-breakpoint-up(md) {
         font-size: $font-display-m;
@@ -45,3 +44,12 @@
         font-size: $font-headline-l;
     }
 }
+
+@mixin font-body {
+    font-size: $font-body-m;
+
+    @include media-breakpoint-up(sm) {
+        font-size: $font-body-l;
+    }
+}
+

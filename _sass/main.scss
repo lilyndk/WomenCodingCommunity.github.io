@@ -20,20 +20,55 @@ body {
   min-height: 100vh;
 }
 
-.container,
-.row-header,
-.row-content {
-  max-width: $container-max-width;
+p, ul, ol {
+  @include font-body;
 }
 
-.row {
-  justify-content: center;
-  padding-top: map-get($spacers, 6);
-  padding-bottom: map-get($spacers, 6);
+.menu .dropdown > a.active-nav::after {
+  width: 100%;
+  background: $primary;
+}
 
-  h2 {
+//
+// Layout
+//
+
+.page-header {
+  background: $bg-1;
+  color: $primary;
+  text-align: center;
+  padding: map-get($spacers, 5) map-get($spacers, 2);
+
+  h1 {
     @include font-display-m;
+    margin-bottom: 0;
   }
+}
+
+.container {
+  .section {
+    margin-top: map-get($spacers, 5) !important;
+
+    &:last-child {
+      margin-bottom: map-get($spacers, 5);
+    }
+  }
+}
+
+.content-constrained {
+  h2 {
+    @include font-headline-l;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: $font-headline-m;
+    margin: 1.7rem 0 1rem 0;
+  }
+}
+
+.container {
+  max-width: 100%;
 
   &.bg-1 {
     background-color: $bg-1;
@@ -44,23 +79,31 @@ body {
   }
 }
 
-.row-header {
-  text-align: center;
+nav.container,
+.row {
+  max-width: $container-max-width;
 }
 
-@include media-breakpoint-up(lg) {
-  .row-content {
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.row {
+  margin: 0 auto;
+  padding-top: map-get($spacers, 6);
+  padding-bottom: map-get($spacers, 6);
+  justify-content: center;
+}
+
+.row-header {
+  text-align: center;
+
+  h2 {
+    @include font-display-m;
   }
 }
 
-.menu .dropdown > a.active-nav::after {
-  width: 100%;
-  background: $primary;
+.row-content {
+  display: flex;
+  flex-direction: column;
 }
+
 
 // Basic page 'content constrained' container width size adjustments to ensure 50-75 char per line for optimal readability  
 

@@ -2,16 +2,21 @@
     padding: 0;
     height: 100%;
     border: 1px solid $border-color;
+
+    .btn {
+        max-width: fit-content;
+    }
 }
 
 .card,
-.card-group > .card:first-child,
-.card-group > .card:last-child {
+.card-deck > .card:first-child,
+.card-deck > .card:last-child {
     border-radius: $border-radius;
 }
 
 .card-date {
-    color: $gray-600;
+    color: $neutral-40;
+    font-size: $font-label-m;
 }
 
 .card-s {
@@ -27,8 +32,8 @@
         font-size: 1.1rem;
     }
 
-    .card p {
-        line-height: 1;
+    p {
+        font-size: $font-body-m;
     }
 
     .card-img-top {
@@ -45,26 +50,20 @@
 }
 
 .card-m {
-    .card-header {
-        background-color: transparent;
-        border: none;
-    }
-
-    .card-title {
-        margin-top: 0;
-    }
-
     .card-body {
         padding: map-get($spacers, 5);
         display: flex;
-        height: 100%;
         flex-direction: column;
-        text-align: center;
         align-items: center;
     }
 
-    .btn {
-        max-width: fit-content;
+    .card-title {
+        font-size: $font-headline-l;
+    }
+
+    p {
+        @include font-body;
+        text-align: center;
     }
 }
 
@@ -75,6 +74,10 @@
         border-radius: $border-radius;
         margin-bottom: map-get($spacers, 3);
         border-color: $white;
+
+        p {
+            font-size: $font-body-m;
+        }
     }
 
     .card-body {
@@ -83,6 +86,10 @@
         flex-direction: column;
         text-align: left;
         flex: none;
+    }
+
+    .card-title {
+        font-size: $font-title-l;
     }
 
     .card-media {
@@ -97,7 +104,7 @@
         }
     }
 
-    .card-group {
+    .card-deck {
         margin-right: auto;
         margin-left: auto;
         flex-direction: column;
@@ -118,7 +125,7 @@
             }
         }
 
-        .card-group {
+        .card-deck {
             .col-12 {
                 flex: none;
             }
@@ -128,7 +135,7 @@
 
 @include media-breakpoint-up(lg) {
     .announcements {
-        .card-group {
+        .card-deck {
             flex-direction: row;
         }
 
@@ -137,6 +144,47 @@
         }
     }
 }
+
+.programmes {
+    .card {
+        text-align: center;
+
+        p {
+            @include font-body;
+            text-align: center;
+        }
+
+        a {
+            display: block;
+            font-size: $font-title-l;
+            padding: map-get($spacers, 3);
+            border-radius: $border-radius;
+        }
+        
+        .material-symbols-outlined {
+            color: $black;
+        }
+
+        figure {
+            margin-bottom: map-get($spacers, 1);
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .programmes {
+        .card {
+            a {
+                &:hover {
+                    background-color: $primary-80;
+                    color: $primary-10;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
 
 .mentorship-about {
     .card-body {
@@ -186,7 +234,6 @@
     }
 
     .card-desc {
-      font-size: 16px;
       overflow: hidden;
       display: -webkit-box;
       -webkit-line-clamp: 2;

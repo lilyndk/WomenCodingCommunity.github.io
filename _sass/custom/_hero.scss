@@ -1,14 +1,8 @@
 .hero {
     padding: 0 map-get($spacers, 3);
 
-    &.row {
+    .row {
         padding: map-get($spacers, 5) 0;
-    }
-
-    .row-content {
-        display: flex;
-        flex-direction: column;
-        padding: 0;
     }
 
     h1,
@@ -74,7 +68,7 @@
 
 @include media-breakpoint-up(md) {
     .hero {
-        .row-content {
+        .row {
             align-items: center;
             flex-direction: row;
         }

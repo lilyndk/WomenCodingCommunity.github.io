@@ -1,6 +1,12 @@
 .home {
 
     .row {
+        .card-deck {
+            > * {
+                margin-bottom: 1rem;
+            }
+        }
+        
         &.mentors-cta {
             h2 {
                 font-size: $h2-font-size;
@@ -14,24 +20,45 @@
         }
     }
 
-    .programs article {
-        margin: 1rem .25rem;
+    .mission,
+    .programmes {
+        p {
+            @include font-body;
+            text-align: center;
+        }
     }
 
-    .programs article a {
-        display: block;
-        padding: 1.5rem 1rem;
-        background: #fff;
-        border-radius: 12px;
-
-        &:hover {
-            background-color: $primary-80;
-            color: $primary-10;
-            text-decoration: none;
+    .mission {
+        .row-content {
+            flex-direction: column;
+            text-align: center;
         }
 
-        .material-symbols-outlined {
-            color: $black;
+        .btn {
+            max-width: fit-content;
+            margin: 0 auto;
         }
+    }
+
+    .programmes {
+        .row-content {
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+
+        .card-deck {
+            width: 100%;
+            margin-top: map-get($spacers, 4);
+
+            .card {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    }
+
+    .support {
+        text-align: center;
     }
 }
