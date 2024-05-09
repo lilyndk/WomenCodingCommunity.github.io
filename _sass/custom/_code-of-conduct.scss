@@ -1,5 +1,4 @@
-.code-of-conduct {
-
+.mentorship-code-of-conduct {
     .row {
         justify-content: center;
     }
@@ -24,5 +23,12 @@
 
     .btn-show-more {
         margin-bottom: map-get($spacers, 4);
+    }
+
+    .featured-content {
+        .card-l {
+            border: none;
+            text-align: center;
+        }
     }
 }

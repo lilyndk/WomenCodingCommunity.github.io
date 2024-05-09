@@ -19,4 +19,21 @@
             }
         }
     }
+
+    .featured-content {
+
+        .row-content {
+            display: flex;
+            justify-content: center;
+        }
+
+        .card-l {
+            border: none;
+            text-align: center;
+            
+            p {
+                text-align: center;
+            }
+        }
+    }
 }

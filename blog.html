@@ -17,31 +17,34 @@ title: Community Blog
 
                         {% else %}
                             {% for post in posts %}
+                            <div class="col-12 col-md-6">
                                 <div class="card card-m">
                                     <a class="cursor-pointer" href="{{post.url}}">
-                                        {% if post.blurb_img %}
-                                            <img src="{{post.blurb_img}}" alt="header image for {{post.title}}" class="card-img-top">
-                                        {% else %}
-                                            <img src="/assets/images/blog/default.jpg" alt="header image for {{post.title}}" class="card-img-top">
-                                        {% endif %}
+                                        <div class="card-media">
+                                            {% if post.blurb_img %}
+                                                <img src="{{post.blurb_img}}" alt="header image for {{post.title}}">
+                                            {% else %}
+                                                <img src="/assets/images/blog/default.jpg" alt="header image for {{post.title}}">
+                                            {% endif %}
+                                        </div>
 
                                         <div class="card-body">
                                             <h5 class="card-title">{{post.title}}</h5>
                                             <p class="card-desc">{{post.description}}</p>
-                                            <div class="author d-flex align-items-center">
-                                                <div class="author_img">
-                                                <img src="/assets/images/blog/author.png" alt="Author picture">
+                                            <div class="card-author d-flex align-items-center">
+                                                <div class="card-author-image">
+                                                    <img src="/assets/images/blog/author.png" alt="Author picture">
                                                 </div>
                                                 <div class="d-flex flex-column">
-                                                <div class="author_name">{{post.author}}</div>
-                                                <div class="article-date">{{ post.date | date: "%d.%m.%Y" }}
-                                                </div>
+                                                    <div class="card-author-name">{{post.author}}</div>
+                                                    <div class="card-date">{{ post.date | date: "%d.%m.%Y" }}</div>
                                                 </div>
                                             </div>
                                             
                                         </div>
                                     </a>
                                 </div>
+                            </div>
                             {% endfor %}
                         {% endif %}
                     </div>
