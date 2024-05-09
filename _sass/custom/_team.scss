@@ -1,6 +1,12 @@
 
 .team {
 
+    .card-deck {
+        .card {
+            margin: 0 0 map-get($spacers, 4) 0;
+        }
+    }
+
     .card-media {
         padding: map-get($spacers, 4) map-get($spacers, 4) map-get($spacers, 2) map-get($spacers, 4);
         img {
