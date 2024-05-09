@@ -24,8 +24,7 @@
     }
 
     .card {
-        margin-left: 1rem;
-        margin-right: 1rem;
+        margin: 0 map-get($spacers, 3) map-get($spacers, 3) map-get($spacers, 3);
     }
 }
 
