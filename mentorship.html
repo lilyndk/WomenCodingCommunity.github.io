@@ -2,20 +2,19 @@
 layout: default
 title: Mentorship Programme
 ---
-<main class="mentorship-overview">
-    <header class="page-header">
-        <h1>Mentorship Programme</h1>
-    </header>
-    <div class="container">
-        <div class="page-content">
-            <section class="content-constrained">
+
+{% include page-header.html %}
+<div class="mentorship-about container">
+    <div class="row">
+        <div class="content pb-5">
+            <div class="col-12 col-md-6">
                 <p class="lead">Mentorship is a fantastic way to get support for your personal growth and career development. Mentorship relationships can be rewarding to both people, personally and professionally. It's an opportunity to develop communication skills, expand your viewpoints, and consider new ways of approaching situations. And both partners can advance their careers in the process.</p>
-            </section>
+            </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row row-featured-content">
-            <div class="card-deck">
+    <div class="row mentors-cta">
+        <div class="content pt-0">
+            <div class="col-12 col-md-6">
                 <div class="card card-m">
                     <div class="card-body">
                         <h2 class="card-title">Become a Mentor</h2>
@@ -29,7 +28,8 @@ title: Mentorship Programme
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdtf7-upMp1m5kJ4MSpexS-UwGJHhACEW-yPoEQoROHi4kVcg/viewform" target="_blank" class='btn btn-primary'>Join as a mentor</a>
                     </div>
                 </div>
-
+            </div>
+            <div class="col-12 col-md-6">
                 <div class="card card-m">
                     <div class="card-body">
                         <h2 class="card-title">Become a Mentee</h2>
@@ -47,4 +47,4 @@ title: Mentorship Programme
             </div>
         </div>
     </div>
-</main>
+</div>

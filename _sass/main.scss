@@ -29,6 +29,25 @@ p, ul, ol {
   background: $primary;
 }
 
+.skip-link {
+  position: absolute;
+  left: -999em;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.skip-link:focus,
+.skip-link:active {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+}
+
+
 //
 // Layout
 //
