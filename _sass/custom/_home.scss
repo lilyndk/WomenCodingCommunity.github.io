@@ -32,7 +32,6 @@
         flex-direction: column;
     }
 
-    .mission,
     .programmes {
         p {
             @include font-body;
@@ -46,9 +45,9 @@
             text-align: center;
         }
 
-        .btn {
-            max-width: fit-content;
-            margin: 0 auto;
+        .card {
+            background-color: transparent;
+            border: none;
         }
     }
 
@@ -57,16 +56,6 @@
             flex-direction: column;
             align-items: center;
             height: 100%;
-        }
-
-        .card-deck {
-            width: 100%;
-            margin-top: map-get($spacers, 4);
-
-            .card {
-                margin-left: 0;
-                margin-right: 0;
-            }
         }
     }
 

@@ -2,7 +2,7 @@
     padding: 0 map-get($spacers, 3);
 
     .row {
-        padding: map-get($spacers, 5) 0;
+        padding: map-get($spacers, 3) 0 map-get($spacers, 6) 0;
     }
 
     h1,
@@ -23,7 +23,7 @@
         margin: map-get($spacers, 3) auto;
         height: 0.5rem;
         width: 6rem;
-        background: linear-gradient(to right, $coral-80, $yellow-90, $primary);
+        background: linear-gradient(to left, $secondary-80, $tertiary-90, $primary-60);
         border: none;
     }
 }
@@ -34,11 +34,11 @@
 
 .hero-image {
     position: relative;
-    background-image: url("./../../assets/images/home/hero-image.jpg");
+    background-image: url("./../../assets/images/home/stock-unsplash-home-hero.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 25%;
-    height: 250px;
+    height: 260px;
     width: 95%;
 
     &::before {
@@ -69,6 +69,7 @@
 @include media-breakpoint-up(md) {
     .hero {
         .row {
+            padding: map-get($spacers, 5) 0 map-get($spacers, 6) 0;
             align-items: center;
             flex-direction: row;
         }
@@ -88,8 +89,8 @@
     } 
 
     .hero-image {
-        margin-right: 2.5rem;
-        height: 350px;
+        margin-right: map-get($spacers, 1);
+        height: 360px;
 
         &::after {
             bottom: -2rem;

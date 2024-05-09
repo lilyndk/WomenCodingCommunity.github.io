@@ -1,3 +1,7 @@
+//
+// Global card styles
+//
+
 .card {
     padding: 0;
     height: 100%;
@@ -18,9 +22,10 @@
     > * {
         height: 100%;
     }
-    
+
     .card {
-        margin: 1rem 0;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 }
 
@@ -69,6 +74,7 @@
 
     .card-title {
         font-size: $font-headline-l;
+        text-align: center;
     }
 
     p {
@@ -77,43 +83,93 @@
     }
 }
 
-.mentorship-resources,
-.announcements {
-    .card {
-        display: flex;
-        flex-direction: column;
-        border-radius: $border-radius;
-        margin-bottom: map-get($spacers, 3);
-
-        p {
-            font-size: $font-body-m;
-        }
+.card-l {
+    .card-title {
+        font-size: $font-display-s;
     }
 
     .card-body {
-        padding: map-get($spacers, 4);
+        justify-content: center;
+        padding: map-get($spacers, 5);
+    }
+
+    p {
+        @include font-body;
+        text-align: left;
+    }
+}
+
+.card-horizontal {
+    display: flex;
+    flex-direction: row;
+    border-radius: $border-radius;
+
+    .card-body {
         display: flex;
         flex-direction: column;
         text-align: left;
         flex: none;
     }
 
-    .card-title {
-        font-size: $font-title-l;
-    }
-
     .card-media {
-        padding: 0;
+        flex: none;
+        padding-left: 0;
 
         img {
             width: 100%;
             height: 100%;
-            max-height: 240px;
             object-fit: cover;
-            border-radius: 0 0 $border-radius $border-radius;
+        }
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .card-deck {
+        .card-horizontal {
+            flex-direction: row;
+        } 
+    }
+
+    .card-horizontal {
+        .card-media {
+            img {
+                max-height: 100%;
+            }
+        }
+    }
+}
+
+//
+// Custom card styles
+//
+
+.announcements {
+    .card-horizontal {
+        border: none;
+        background: transparent;
+        p {
+            font-size: $font-body-m;
+        }
+        img {
+            max-height: 240px;
         }
     }
 
+    .card-body {
+        padding: map-get($spacers, 2);
+    }
+
+    .card-deck {
+        .card-horizontal {
+            &:not(:only-child) {
+                margin-bottom: map-get($spacers, 5);
+            }
+        }
+    }
+}
+
+.announcements,
+.mentorship-resources {
     .card-deck {
         margin-right: auto;
         margin-left: auto;
@@ -122,43 +178,10 @@
     }
 }
 
-.announcements {
-    .card {
-        border-color: $white;
-    }
-}
-
-@include media-breakpoint-up(sm) {
-    .mentorship-resources,
-    .announcements {
-        .card {
-            flex-direction: row;
-        }
-
-        .card-media {
-            img {
-                max-height: 100%;
-                border-radius: 0 $border-radius $border-radius 0;
-            }
-        }
-
-        .card-deck {
-            .col-12 {
-                flex: none;
-            }
-        }
-    }
-}
-
-@include media-breakpoint-up(lg) {
-    .mentorship-resources,
-    .announcements {
-        .card-deck {
-            flex-direction: row;
-        }
-
-        .card-body {
-            flex: 1 1 auto;
+.mentorship-resources {
+    .card-media {
+        img {
+            border-radius: 0 0 $border-radius $border-radius;
         }
     }
 }
@@ -166,39 +189,30 @@
 .programmes {
     .card {
         text-align: center;
-
         p {
             @include font-body;
             text-align: center;
         }
-
         a {
             display: block;
             font-size: $font-title-l;
             padding: map-get($spacers, 3);
             border-radius: $border-radius;
         }
-        
         .material-symbols-outlined {
             color: $black;
         }
-
         figure {
             margin-bottom: map-get($spacers, 1);
         }
     }
-}
 
-@include media-breakpoint-up(md) {
-    .programmes {
+    .card-deck {
+        width: 100%;
+        margin-top: map-get($spacers, 4);
         .card {
-            a {
-                &:hover {
-                    background-color: $primary-80;
-                    color: $primary-10;
-                    text-decoration: none;
-                }
-            }
+            margin-left: 0;
+            margin-right: 0;
         }
     }
 }
@@ -206,12 +220,10 @@
 .mentorship-overview {
     .card-body {
         align-items: baseline;
-
         ol {
             text-align: left;
             padding-left: 1.4rem;
         }
-
         p {
             margin-bottom: 0.25rem;
             text-align: left;
@@ -223,17 +235,17 @@
     }
 }
 
-@include media-breakpoint-up(md) {
-    .mentorship-overview {
-        .card-deck {
-            flex-flow: row wrap;
+.support {
+    .card-l {
+        border: none;
+        .card-body {
+            padding: 0;
         }
     }
 }
 
 .blog {
     .card {
-
         a {
             &:hover {
                 text-decoration: none;
@@ -241,32 +253,108 @@
                 border-radius: $border-radius;
             }
         }
-    
-        .card-img-top {
-            max-height: 300px;
-            object-fit: cover;
-            border-top-left-radius: 1rem;
-            border-top-right-radius: 1rem;
-        }
-    
-        .card-body {
-            align-items: baseline;
+    }
 
-            p {
-                text-align: left;
+    .card-img-top {
+        max-height: 300px;
+        object-fit: cover;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+
+    .card-body {
+        align-items: baseline;
+
+        p {
+            text-align: left;
+        }
+    }
+
+    .card-title {
+        color: $link-color;
+    }
+
+    .card-desc {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .mission {
+        .card-horizontal {
+            flex-direction: column;
+            .card-body {
+                padding: map-get($spacers, 3) 0;
             }
         }
-    
-        .card-title {
-            color: $link-color;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .mentorship-overview {
+        .card-deck {
+            flex-flow: row wrap;
+        }
+    }
+
+    .mission {
+        .card-horizontal {
+            .card-body {
+                padding: map-get($spacers, 2);
+            }
+        }
+    }
+
+    .programmes {
+        .card {
+            a {
+                &:hover {
+                    background-color: $neutral-90;
+                    border-color: $neutral-90;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .mentorship-resources,
+    .announcements {
+        .card-body {
+            flex: 1 1 auto;
         }
 
-        .card-desc {
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            text-overflow: ellipsis;
+        .card-deck {
+            flex-direction: row;
+        }
+    }
+
+    .announcements {
+        .card {
+            img {
+                max-height: 100%;
+            }
+        }
+    }
+
+    .mentorship-resources {
+        .card-media {
+            img {
+                border-radius: 0 $border-radius $border-radius 0;
+            }
+        }
+    }
+
+    .mission {
+        .card-horizontal {
+            .card-body {
+                padding: map-get($spacers, 3);
+            }
         }
     }
 }

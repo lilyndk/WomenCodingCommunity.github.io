@@ -1,5 +1,4 @@
-.blog {
-
+.list-blog {
   .author {
     &_img {
       width: 32px;
@@ -10,6 +9,12 @@
     &_name {
       font-size: $small-font-size;
     }
+  }
+}
+
+.article-blog {
+  h1 {
+    text-align: center;
   }
 
   .article-date {

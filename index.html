@@ -8,35 +8,40 @@ title: Home
 
     <div class="container mission bg-1">
         <div class="row featured-content">
-            <div class="row-header col-12">
-                <h2>Join our Community</h2>
-            </div>
-            <div class="row-content col-12 col-md-8 col-lg-6">
-                <p>Empowering women in their tech careers through education, mentorship, community building, and career services is our mission. We provide workshops and events, connect members with industry mentors, foster a supportive community through meetups and conferences, and raise awareness for more inclusive industry practices.</p>
-                <a href="/about" class="btn btn-primary">Learn more about us</a>
+            <div class="row-content col-12">
+                <div class="card card-l card-horizontal">
+                    <div class="card-media col-12 col-md-6">
+                        <img src="./assets/images/home/stock-unsplash-mission-cta_16x9.jpg" alt="{{ announcement.image.alt }}">
+                    </div>
+                    <div class="card-body col-12 col-md-6">
+                        <h2 class="card-title">Join Our Community</h2>
+                        <p>Empowering women in their tech careers through education, mentorship, community building, and career services is our mission. We provide workshops and events, connect members with industry mentors, foster a supportive community through meetups and conferences, and raise awareness for more inclusive industry practices.</p>
+                        <a href="/about" class="btn btn-primary">Learn more about us</a>    
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="container announcements bg-gradient-1">
+    <div class="container announcements">
         <div class="row featured-content">
-            <div class="row-header col-12">
+            <div class="row-header pb-5">
                 <h2>Announcements</h2>
             </div>
-            <div class="row-content col-12">
+            <div class="row-content">
                 <div class="card-deck">
                     {% for announcement in site.data.announcement %}
-                    <article class="card">
-                        <div class="card-body col-sm-8">
+                    <article class="card card-horizontal">
+                        <div class="card-media col-4">
+                            <img src="{{ announcement.image.path }}" alt="{{ announcement.image.alt }}">
+                        </div>
+                        <div class="card-body col-8">
                             <div class="card-date">{{ announcement.date }}</div>
                             <h3 class="card-title">{{ announcement.title }}</h3>
                             <p>{{ announcement.description }}</p> 
                             {% if announcement.link %}
                                 <a href="{{ announcement.link.path }}" class="btn btn-outline-primary">{{announcement.link.title }}</a>
                             {% endif %}
-                        </div>
-                        <div class="card-media col-sm-4">
-                            <img src="{{ announcement.image.path }}" alt="{{ announcement.image.alt }}">
                         </div>
                     </article>
                     {% endfor %}
@@ -45,9 +50,9 @@ title: Home
         </div>
     </div>
     
-    <div class="container programmes bg-2">
+    <div class="container programmes bg-gradient-1">
         <div class="row featured-content">
-            <div class="row-header col-12">
+            <div class="row-header pb-3">
                 <h2>Opportunities & Programmes</h2>
             </div>
             <div class="row-content col-12">
@@ -97,9 +102,13 @@ title: Home
 
     <div class="container support">
         <div class="row featured-content">
-            <div class="col-12">
-                <h2>Experiencing technical issues?</h2>
-                <a href="https://github.com/WomenCodingCommunity/WomenCodingCommunity.github.io/issues/new?template=bug_report.md&title=bug title" target="_blank" class="btn btn-outline-primary">Send us a report</a>
+            <div class="row-content col-12">
+                <div class="card card-l">
+                    <div class="card-body col-12">
+                        <h2 class="card-title">Experiencing technical issues?</h2>
+                        <a href="https://github.com/WomenCodingCommunity/WomenCodingCommunity.github.io/issues/new?template=bug_report.md&title=bug title" target="_blank" class="btn btn-outline-primary">Send us a report</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
