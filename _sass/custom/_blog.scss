@@ -1,70 +1,60 @@
 .blog {
-  padding: 15px;
 
-  .row {
-    justify-content: flex-start;
+  .author {
+    &_img {
+      width: 32px;
+      height: 32px;
+      margin-right: 10px;
+    }
+
+    &_name {
+      font-size: $small-font-size;
+    }
   }
 
-  &__block {
-    margin-top: 4rem;
-    margin-bottom: 7rem;
-  }
-}
-
-.author {
-  &_img {
-    width: 32px;
-    height: 32px;
-    margin-right: 10px;
+  .article-date {
+    color: gray;
+    font-size: 12px;
   }
 
-  &_name {
-    font-size: $small-font-size;
-  }
-}
+  $post-max-width: 1024px;
 
-.article-date {
-  color: gray;
-  font-size: 12px;
-}
+  .post {
 
-$post-max-width: 1024px;
+    &_body {
+      margin-bottom: 7rem;
+    }
 
-.post {
+    h4, h5, h6 {
+      padding: 15px 0;
+    }
 
-  &_body {
-    margin-bottom: 7rem;
-  }
+    p, li {
+      margin-bottom: 15px;
+    }
 
-  h4, h5, h6 {
-    padding: 15px 0;
-  }
+    a {
+      font-weight: 600;
+      text-decoration: underline;
+      font-size: 18px;
+    }
 
-  p, li {
-    margin-bottom: 15px;
-  }
+    .post_body img {
+      padding: 25px;
+    }
 
-  a {
-    font-weight: 600;
-    text-decoration: underline;
-    font-size: 18px;
-  }
-
-  .post_body img {
-    padding: 25px;
-  }
-
-  blockquote {
-    padding: 2rem 0;
-    color: #164863;
-    font-weight: bold;
-    font-style: italic;
-  }
-  
-  blockquote p:before {
-    content: '"'
-  }
-  blockquote p:after {
-    content: '"'; 
+    blockquote {
+      padding: 2rem 0;
+      color: #164863;
+      font-weight: bold;
+      font-style: italic;
+    }
+    
+    blockquote p:before {
+      content: '"'
+    }
+    blockquote p:after {
+      content: '"'; 
+    }
   }
 }

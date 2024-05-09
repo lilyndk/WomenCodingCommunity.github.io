@@ -1,3 +1,4 @@
+@import "accordion";
 @import "blog";
 @import "buttons";
 @import "card";
@@ -12,7 +13,6 @@
 @import "mentors";
 @import "media-breakpoint";
 @import "mixins";
-@import "resources";
 
 .network svg:hover  {
     fill: $primary-50 !important;

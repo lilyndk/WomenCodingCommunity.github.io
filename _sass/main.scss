@@ -16,8 +16,11 @@ body {
   font-weight: 400;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   min-height: 100vh;
+}
+
+main {
+  flex-grow: 1
 }
 
 p, ul, ol {
@@ -47,37 +50,20 @@ p, ul, ol {
   clip: auto;
 }
 
-
 //
 // Layout
 //
 
-.page-header {
-  background: $primary-90;
-  color: $primary;
-  text-align: center;
-  padding: map-get($spacers, 5) map-get($spacers, 2);
+// Global containers
 
-  h1 {
-    @include font-display-m;
-    margin-bottom: 0;
-  }
+.row,
+.mentors .search,
+nav.container {
+  max-width: $container-max-width;
 }
 
-.page-content {
-  section {
-    margin-top: map-get($spacers, 5) !important;
-
-    &:last-child {
-      margin-bottom: map-get($spacers, 5);
-    }
-  }
-
-  p {
-    &.lead {
-      text-align: center;
-    }
-  }
+.row {
+  margin: 0 auto;
 }
 
 .container {
@@ -92,24 +78,6 @@ p, ul, ol {
   }
 }
 
-nav.container,
-.mentors .search,
-.page-content,
-.row {
-  max-width: $container-max-width;
-}
-
-.page-content,
-.row {
-  margin: 0 auto;
-}
-
-.row-featured-content {
-  padding-top: map-get($spacers, 6);
-  padding-bottom: map-get($spacers, 6);
-  justify-content: center;
-}
-
 .row-header {
   text-align: center;
 
@@ -118,25 +86,59 @@ nav.container,
   }
 }
 
-.row-content {
-  display: flex;
-  flex-direction: column;
+// Interior pages
+
+.page-header {
+  background: $primary-90;
+  color: $primary;
+  text-align: center;
+  padding: map-get($spacers, 5) map-get($spacers, 2);
+
+  h1 {
+    @include font-display-m;
+    margin-bottom: 0;
+  }
 }
 
+.page-intro {
+  display: flex;
+  justify-content: center;
+  p {
+    @include font-body;
+    text-align: center;
+  }
+}
+
+.page {
+  section {
+    margin-top: map-get($spacers, 5);
+    margin-bottom: map-get($spacers, 5);
+  }
+
+  .featured-content {
+    padding-top: map-get($spacers, 5);
+    padding-bottom: map-get($spacers, 5);
+
+    .row {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  
+  .content-constrained {
+    h2 {
+      @include font-headline-l;
+      margin-bottom: 1rem;
+    }
+  
+    h3 {
+      font-size: $font-headline-m;
+      margin: 1.7rem 0 1rem 0;
+    }
+  }
+}
 
 // Basic page 'content constrained' container width size adjustments to ensure 50-75 char per line for optimal readability  
-
-.content-constrained {
-  h2 {
-    @include font-headline-l;
-    margin-bottom: 1rem;
-  }
-
-  h3 {
-    font-size: $font-headline-m;
-    margin: 1.7rem 0 1rem 0;
-  }
-}
 
 $custom-container-columns-l: 8;
 $custom-container-columns-m: 7;

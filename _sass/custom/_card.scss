@@ -51,10 +51,10 @@
 
 .card-m {
     .card-body {
-        padding: map-get($spacers, 5);
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 2rem 2rem 3rem 2rem;
     }
 
     .card-title {
@@ -67,13 +67,13 @@
     }
 }
 
+.mentorship-resources,
 .announcements {
     .card {
         display: flex;
         flex-direction: column;
         border-radius: $border-radius;
         margin-bottom: map-get($spacers, 3);
-        border-color: $white;
 
         p {
             font-size: $font-body-m;
@@ -98,7 +98,7 @@
         img {
             width: 100%;
             height: 100%;
-            max-height: 200px;
+            max-height: 240px;
             object-fit: cover;
             border-radius: 0 0 $border-radius $border-radius;
         }
@@ -112,7 +112,14 @@
     }
 }
 
+.announcements {
+    .card {
+        border-color: $white;
+    }
+}
+
 @include media-breakpoint-up(sm) {
+    .mentorship-resources,
     .announcements {
         .card {
             flex-direction: row;
@@ -134,6 +141,7 @@
 }
 
 @include media-breakpoint-up(lg) {
+    .mentorship-resources,
     .announcements {
         .card-deck {
             flex-direction: row;
@@ -185,7 +193,6 @@
     }
 }
 
-
 .mentorship-overview {
     .card-body {
         align-items: baseline;
@@ -214,44 +221,42 @@
     }
 }
 
-.blog-card {
-    height: 100%;
+.blog {
+    .card {
 
-    a {
-      color: $gray-800;
-      &:hover {
-        text-decoration: none;
-        background-color: $gray-100;
-        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
-      }
-    }
-  
-    .card-img-top {
-      max-height: 300px;
-      object-fit: cover;
-      border-top-left-radius: 1rem;
-      border-top-right-radius: 1rem;
-    }
-  
-    .card-body {
-      display: flex;
-      height: 100%;
-      flex-direction: column;
-      padding: 1.5rem;
-    }
-  
-    .card-title {
-      font-size: 22px;
-      margin-bottom: 15px;
-      color: $primary-40;
-    }
+        a {
+            &:hover {
+                text-decoration: none;
+                background-color: $neutral-95;
+                border-radius: $border-radius;
+            }
+        }
+    
+        .card-img-top {
+            max-height: 300px;
+            object-fit: cover;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+    
+        .card-body {
+            align-items: baseline;
 
-    .card-desc {
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      text-overflow: ellipsis;
+            p {
+                text-align: left;
+            }
+        }
+    
+        .card-title {
+            color: $link-color;
+        }
+
+        .card-desc {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+        }
     }
 }
-
