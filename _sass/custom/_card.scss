@@ -188,6 +188,7 @@
 .programmes {
     .card {
         text-align: center;
+        border: none;
         p {
             @include font-body;
             text-align: center;
