@@ -2,7 +2,7 @@
 .team {
 
     .card-media {
-        padding: 2rem;
+        padding: map-get($spacers, 4) map-get($spacers, 4) map-get($spacers, 2) map-get($spacers, 4);
         img {
             border-radius: 100%;
         }
@@ -30,7 +30,7 @@
         .card-l {
             border: none;
             text-align: center;
-            
+
             p {
                 text-align: center;
             }
