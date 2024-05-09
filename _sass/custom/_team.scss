@@ -1,17 +1,15 @@
 
 .team {
 
-    .row {
-        justify-content: flex-start;
-    }
-
-    .profile-photo {
-        width: 150px;
+    .card-media {
+        padding: 2rem;
+        img {
+            border-radius: 100%;
+        }
     }
     
     .network {
         a {
-            border-radius: 100%;
             display: inline-block;
             margin-right: 0.5rem;
             svg {
@@ -20,20 +18,5 @@
                 fill: $primary;
             }
         }
-    }
-
-    .contributors {
-        .row {
-            margin-bottom: 50px;
-        }
-    }
-
-    .section {
-        @extend .my-7;
-    }
-
-    .col-12 {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
     }
 }

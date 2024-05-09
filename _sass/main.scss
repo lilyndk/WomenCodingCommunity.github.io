@@ -23,10 +23,6 @@ main {
   flex-grow: 1
 }
 
-p, ul, ol {
-  @include font-body;
-}
-
 .menu .dropdown > a.active-nav::after {
   width: 100%;
   background: $primary;
@@ -110,6 +106,10 @@ nav.container {
 }
 
 .page {
+  p, ul, ol {
+    @include font-body;
+  }
+  
   section {
     margin-top: map-get($spacers, 5);
     margin-bottom: map-get($spacers, 5);
